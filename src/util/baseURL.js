@@ -1,3 +1,3 @@
 export const getBaseUrl = () => {
-    return "http://localhost:5000"
+    return "https://sambhaar-mern-backend.vercel.app"
 }
