@@ -5,6 +5,7 @@ import PromoBanner from '../../components/home/PromoBanner'
 import Footer from '../../components/Footer'
 import Products from '../../components/shop/Products'
 import PromotionSlider from '../../components/home/PromotionalBanner'
+import Categories from '../../components/home/Categories'
 
 const Home = () => {
 
