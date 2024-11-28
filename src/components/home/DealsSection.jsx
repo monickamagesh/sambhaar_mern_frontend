@@ -1,5 +1,5 @@
 import React from "react";
-import dealsImg from "../../assets/milk/banner-2.png";
+import dealsImg from "../../assets/milk/Banner-2.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
