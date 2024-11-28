@@ -18,10 +18,6 @@ const Home = () => {
         <HeroSection />
         <Categories />
         <PromotionSlider />
-<<<<<<< HEAD
-=======
-        {/* <Trending /> */}
->>>>>>> e11e4eed60c8b9b8b057ff53841d4f8dbe43948c
         <Products />
         <DealsSection />
         <PromoBanner />
