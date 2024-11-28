@@ -39,7 +39,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative pt-[105px] ">
+    <section className="relative pt-20 ">
       <Swiper
         spaceBetween={2000}
         effect={"fade"}

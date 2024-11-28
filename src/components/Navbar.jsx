@@ -90,7 +90,7 @@ function Navbar() {
         */}
 
       <header
-        className={`fixed top-8 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-white shadow-md text-gray-700 "
             : "bg-transparent  text-gray-700  "
