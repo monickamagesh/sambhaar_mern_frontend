@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import RatingStars from "../RatingStars";
 import SingleProductPopup from "./SingleProduct";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -66,7 +65,7 @@ const ProductCards = ({ products }) => {
               onClick={() => openModal(product)}
             >
               {/* Product Image */}
-              <div className="relative flex h-48 w-auto sm:px-10 items-center justify-center sm:h-56 lg:h-64 group overflow-hidden">
+              <div className="relative flex h-48 w-auto sm:px-10 items-center justify-center sm:h-56  group overflow-hidden">
                 <img
                   src={product.image}
                   alt="product"
@@ -80,11 +79,11 @@ const ProductCards = ({ products }) => {
               </div>
 
               {/* Product Details */}
-              <header className="p-3 text-start md:p-6">
-                <h3 className="mb-2 truncate text-sm font-semibold text-heading">
+              <header className="p-3 text-start md:px-6 md:py-4">
+                <h3 className=" truncate text-sm font-semibold text-heading">
                   {product.name}
                 </h3>
-                <h4 className="text-xs text-gray-500 mb-4">
+                <h4 className="text-xs text-gray-500 mb-1">
                   {product.weight}
                 </h4>
 
@@ -103,7 +102,7 @@ const ProductCards = ({ products }) => {
 
                   {/* Cart Actions */}
                   {cartItem ? (
-                    <div className="mt-4 flex items-center justify-center  text-sm font-semibold text-gray-50  bg-primary border rounded-full ">
+                    <div className="mt-2 flex items-center justify-center  text-sm font-semibold text-gray-50  bg-primary border rounded-full ">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -130,7 +129,7 @@ const ProductCards = ({ products }) => {
                         e.stopPropagation();
                         dispatch(handleAddToCart(product));
                       }}
-                      className="mt-4 flex items-center justify-center px-4 py-2 text-sm font-semibold text-primary border rounded-full hover:bg-primary transition duration-200 hover:text-gray-50"
+                      className="mt-4 flex items-center justify-center px-4 py-2 text-sm font-semibold bg-primary border rounded-full text-white transition duration-200 hover:text-gray-50"
                     >
                       <i className="ri-shopping-basket-fill"></i>
                       <span className="pl-2">Cart</span>
