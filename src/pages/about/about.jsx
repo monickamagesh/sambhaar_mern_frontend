@@ -10,6 +10,7 @@ import ecoimg4 from "../../assets/about/electric-vehicle.png";
 import Grocery from "../../assets/GroceryBag.jpg";
 import "./../../App.css";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer";
 
 const AboutContent = () => {
   const aboutSectionRef = useRef(null);
@@ -491,7 +492,9 @@ const AboutContent = () => {
             </p>
           </div>
         </div>
+
       </div>
+    <Footer />
     </>
   );
 };

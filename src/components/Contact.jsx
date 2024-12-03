@@ -13,6 +13,7 @@ import {
   FaGlobe,
   FaWhatsapp,
 } from "react-icons/fa";
+import Footer from "./Footer";
 
 const Contactpage = () => {
   return (
@@ -142,6 +143,7 @@ const Contactpage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
