@@ -3,7 +3,16 @@ import ContactFormpage from "./ContactForm";
 import { Link } from "react-router-dom";
 import contactimg from "../assets/contact-illustration.png";
 // Import React Icons
-import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaLinkedin, FaPinterest, FaGlobe } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
+  FaLinkedin,
+  FaPinterest,
+  FaGlobe,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const Contactpage = () => {
   return (
@@ -58,7 +67,8 @@ const Contactpage = () => {
             <div className="mb-8 flex flex-col">
               <span className="mb-3 font-semibold text-heading">Phone</span>
               <span className="text-sm text-body">
-                +91 818181 7556 <br />+91 818181 7558
+                +91 818181 7556 <br />
+                +91 818181 7558
               </span>
             </div>
 
@@ -90,12 +100,12 @@ const Contactpage = () => {
                   <FaFacebookF size={20} />
                 </Link>
                 <Link
-                  to="https://twitter.com"
+                  to=""
                   target="_blank"
-                  title="Twitter"
+                  title="Whatsapp"
                   className="text-muted transition-colors duration-300 focus:outline-none hover:text-[#EA580C]"
                 >
-                  <FaTwitter size={20} />
+                  <FaWhatsapp size={20} />
                 </Link>
                 <Link
                   to="https://youtube.com"
@@ -104,22 +114,6 @@ const Contactpage = () => {
                   className="text-muted transition-colors duration-300 focus:outline-none hover:text-[#EA580C]"
                 >
                   <FaYoutube size={20} />
-                </Link>
-                <Link
-                  to="https://linkedin.com"
-                  target="_blank"
-                  title="LinkedIn"
-                  className="text-muted transition-colors duration-300 focus:outline-none hover:text-[#EA580C]"
-                >
-                  <FaLinkedin size={20} />
-                </Link>
-                <Link
-                  to="https://pinterest.com"
-                  target="_blank"
-                  title="Pinterest"
-                  className="text-muted transition-colors duration-300 focus:outline-none hover:text-[#EA580C]"
-                >
-                  <FaPinterest size={20} />
                 </Link>
                 <Link
                   to="/"
@@ -140,7 +134,7 @@ const Contactpage = () => {
           >
             <h1
               className="mb-7 font-body text-xl font-bold text-heading md:text-2xl"
-              style={{ display: "flex", justifyContent: "center"}}
+              style={{ display: "flex", justifyContent: "center" }}
             >
               How can we improve your experience?
             </h1>

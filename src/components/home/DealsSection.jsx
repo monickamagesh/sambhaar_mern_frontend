@@ -1,5 +1,5 @@
 import React from "react";
-import dealsImg from "../../assets/milk/Banner-2.png";
+import dealsImg from "../../assets/milk/banner-2.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -74,7 +74,7 @@ const DealsSection = () => {
           <div className="mt-8 flex flex-col lg:flex-row items-center gap-4">
             <Link
               to={`/subscription`}
-              className="bg-primary text-white px-6 py-3 rounded-lg text-md font-semibold shadow-md hover:bg-orange-600 transition-all duration-300"
+              className="subscribe-btn text-md font-semibold shadow-md transition-all duration-300"
             >
               Subscribe Now
             </Link>

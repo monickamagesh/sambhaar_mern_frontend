@@ -53,7 +53,7 @@ const Products = () => {
   });
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(20);
+  const [productsPerPage] = useState(30);
 
   const { category, subcategory, priceRange } = filtersState;
   const price = filters.priceRanges.find((range) => range.label === priceRange);
