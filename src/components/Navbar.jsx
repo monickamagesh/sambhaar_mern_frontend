@@ -79,11 +79,26 @@ function Navbar() {
 
   return (
     <div>
-      <section className="bg-primary-dark h-8 w-full fixed top-0 z-50 overflow-hidden">
-        <div className="marquee flex items-center text-white font-medium text-sm space-x-10 py-1">
-          <div>Get Extra 10% Off* on Your 1st Order 🤯</div>
-          <div>FREE* SHIPPING🚚 for all orders - BUY NOW</div>
-          <div>Enjoy Same Day Delivery* across Chennai! ❤️</div>
+      <section className="bg-gradient-to-br from-primary-dark to-orange-400 h-8 w-full fixed top-0 z-50 overflow-hidden">
+        <div className="marquee-wrapper flex items-center text-white font-medium text-sm py-1">
+          <div className="marquee animate-marquee">
+            <div className="marquee-content">
+              <div>Get Extra 10% Off* on Your 1st Order 🤯</div>
+              <div>FREE* SHIPPING🚚 for all orders - BUY NOW</div>
+              <div>Enjoy Same Day Delivery* across Chennai! ❤️</div>
+              <div>Get Extra 10% Off* on Your 1st Order 🤯</div>
+              <div>FREE* SHIPPING🚚 for all orders - BUY NOW</div>
+              <div>Enjoy Same Day Delivery* across Chennai! ❤️</div>
+            </div>
+            <div className="marquee-content">
+              <div>Get Extra 10% Off* on Your 1st Order 🤯</div>
+              <div>FREE* SHIPPING🚚 for all orders - BUY NOW</div>
+              <div>Enjoy Same Day Delivery* across Chennai! ❤️</div>
+              <div>Get Extra 10% Off* on Your 1st Order 🤯</div>
+              <div>FREE* SHIPPING🚚 for all orders - BUY NOW</div>
+              <div>Enjoy Same Day Delivery* across Chennai! ❤️</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -295,7 +310,7 @@ function Navbar() {
           onClick={handleCartToggle}
           className="top-[40%] -right-1 z-50 fixed flex items-center justify-end cursor-pointer"
         >
-          <span className=" bg-primary hover:bg-primary-dark px-3 py-4 rounded-md gap-2 flex flex-col">
+          <span className=" bg-gradient-to-br from-orange-600 to-orange-400 px-3 py-4 rounded-md gap-2 flex flex-col">
             <div className="">
               <i className="ri-shopping-cart-fill ri-lg text-white"></i>
               <span className="inline-block text-sm pl-0.5 font-semibold text-white">

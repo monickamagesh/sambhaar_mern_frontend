@@ -128,19 +128,40 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
             <div className="flex gap-4 justify-center lg:justify-start">
               {[
-                "whatsapp-fill",
-                "instagram-fill",
-                "facebook-circle-fill",
-                "youtube-fill",
-                "linkedin-fill",
-              ].map((icon) => (
-                <a
-                  key={icon}
-                  href="#"
-                  className="text-primary hover:text-black hover:bg-gray-200 p-2 rounded-full"
-                >
-                  <i className={`ri-${icon} ri-lg`}></i>
-                </a>
+                {
+                  id: "whatsapp",
+                  icon: "whatsapp",
+                  style:
+                    "bg-white duration-500 w-10 h-10 border-2 rounded-full border-green-600 transform hover:-translate-y-2 text-green-500 hover:bg-green-600 hover:text-white",
+                },
+                {
+                  id: "instagram",
+                  icon: "instagram",
+                  style:
+                    "bg-white sticky duration-500 border-2 border-pink-500 bg-gradient-to-b fixed w-10 h-10 transform hover:-translate-y-2 text-pink-600 hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 hover:text-white rounded-full duration-500",
+                },
+                {
+                  id: "facebook",
+                  icon: "facebook-f",
+                  style:
+                    "bg-white sticky duration-500 border-2 border-blue-600 fixed w-10 h-10 transform hover:-translate-y-2 text-blue-600 hover:bg-blue-600 hover:text-white rounded-full",
+                },
+                {
+                  id: "linkedin",
+                  icon: "linkedin",
+                  style:
+                    "bg-white transform hover:-translate-y-2 border-2 w-10 h-10 rounded-full duration-500 text-blue-500 border-blue-500 hover:bg-blue-500 hover:text-white",
+                },
+                {
+                  id: "youtube",
+                  icon: "youtube",
+                  style:
+                    "bg-white transform hover:-translate-y-2 border-2 w-10 h-10 rounded-full duration-500 text-red-600 border-red-600 hover:bg-red-600 hover:text-white",
+                },
+              ].map(({ id, icon, style }) => (
+                <button key={id} id={id} className={style}>
+                  <i className={`fab fa-${icon} text-lg`}></i>
+                </button>
               ))}
             </div>
             <p className="text-sm text-gray-600">

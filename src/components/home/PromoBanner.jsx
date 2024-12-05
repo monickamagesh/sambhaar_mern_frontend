@@ -148,8 +148,8 @@ const PromoBanner = () => {
               />
             ))}
           </div>
-
-          <div className="brands-banners"></div>
+          <br/><br/>
+          {/* <div className="brands-banners"></div> */}
         </div>
       </div>
 

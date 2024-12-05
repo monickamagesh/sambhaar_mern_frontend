@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
-const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters }) => {
+const ShopFiltering = ({
+  filtersState,
+  setFiltersState,
+  clearFilters,
+  filters,
+}) => {
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Toggle for mobile/tablet sidebar
@@ -31,17 +36,20 @@ const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters })
       {/* Sidebar (only for small screens) */}
       <div
         className={`fixed top-0 right-0 z-50 h-screen bg-white shadow-lg transition-transform duration-300 ease-in-out ${
-          isSidebarOpen ? "transform translate-x-0" : "transform translate-x-full"
-        } md:block w-64 sm:hidden`} // Only visible on small screens (hidden on larger screens)
+          isSidebarOpen
+            ? "transform translate-x-0"
+            : "transform translate-x-full"
+        } md:block w-64 sm:hidden`}
       >
-        <div className="space-y-6 flex-shrink-0 py-8 right-0 h-screen bg-white rounded-lg shadow-md">
+        <div className="space-y-6 flex-shrink-0 py-8 right-0 h-auto w-64 ">
           {/* Category Accordion */}
-          <div className="flex flex-col space-y-6 px-8">
+          <div className="flex flex-col space-y-6 px-10  ">
             {filters.categories.map((category) => (
               <div key={category.value} className="mb-2">
                 <div
-                  className={`flex justify-between items-center cursor-pointer rounded-md ${
-                    expandedCategory === category.value && selectedSubcategory === null
+                  className={`flex justify-between items-center cursor-pointer  rounded-md ${
+                    expandedCategory === category.value &&
+                    selectedSubcategory === null
                       ? "text-primary"
                       : "text-heading"
                   }`}
@@ -50,10 +58,12 @@ const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters })
                   <div className="flex items-center gap-2">
                     {category.icon && (
                       <div>
-                        <i className={category.icon}></i>
+                        <i className={category.icon}> </i>
                       </div>
                     )}
-                    <span className="text-sm font-medium">{category.label}</span>
+                    <span className="text-sm font-medium">
+                      {category.label}
+                    </span>
                   </div>
                   {category.subcategories?.length > 0 && (
                     <button
@@ -68,14 +78,16 @@ const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters })
 
                 {/* Subcategories Accordion */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    expandedCategory === category.value ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                  className={` overflow-hidden transition-all duration-500 ease-in-out ${
+                    expandedCategory === category.value
+                      ? "max-h-screen opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   {category.subcategories?.map((subcategory) => (
                     <div
                       key={subcategory.value}
-                      className={`py-3 pr-2 pl-8 flex rounded-md cursor-pointer text-sm font-medium ${
+                      className={`py-3 pr-2 pl-8 flex  rounded-md cursor-pointer text-sm font-medium ${
                         selectedSubcategory === subcategory.value
                           ? "text-primary"
                           : "text-heading"
@@ -98,7 +110,7 @@ const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters })
                 setSelectedSubcategory(null); // Reset selected subcategory
                 setExpandedCategory(null); // Reset expanded category
               }}
-              className="border-primary text-sm mt-2 border p-2 rounded-md text-primary"
+              className="border-primary text-sm mt-2 mb-20 border p-2 rounded-md text-primary"
             >
               Clear Filters
             </button>
@@ -107,14 +119,15 @@ const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters })
       </div>
 
       {/* Sidebar for larger screens (hidden on sm and below) */}
-      <div className="hidden sm:block space-y-6 flex-shrink-0 py-8 right-0 h-screen bg-white rounded-lg shadow-md w-64">
+      <div className="hidden sm:block space-y-6 flex-shrink-0 py-8 right-0 h-screen w-64">
         {/* Category Accordion for larger screens */}
         <div className="flex flex-col space-y-6 px-8">
           {filters.categories.map((category) => (
             <div key={category.value} className="mb-2">
               <div
                 className={`flex justify-between items-center cursor-pointer rounded-md ${
-                  expandedCategory === category.value && selectedSubcategory === null
+                  expandedCategory === category.value &&
+                  selectedSubcategory === null
                     ? "text-primary"
                     : "text-heading"
                 }`}
@@ -142,7 +155,9 @@ const ShopFiltering = ({ filtersState, setFiltersState, clearFilters, filters })
               {/* Subcategories Accordion */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  expandedCategory === category.value ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+                  expandedCategory === category.value
+                    ? "max-h-screen opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 {category.subcategories?.map((subcategory) => (

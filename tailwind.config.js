@@ -25,6 +25,10 @@ export default {
           to: { transform: "translateX(-100%)" },
         },
       },
+      zIndex: {
+        '51': '51',
+        '100': '100',
+      },
     },
   },
   plugins: [],

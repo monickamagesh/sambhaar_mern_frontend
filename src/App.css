@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
 
-
-
 :root {
   --primary-color: #ea580c;
   --primary-color-dark: #d64b00;
@@ -175,28 +173,54 @@ nav {
 }
 
 .categories__grid {
-  max-width: var(--max-width-900);
-  margin: auto;
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: flex; /* Use flexbox for horizontal layout */
+  gap: 1rem; /* Spacing between items */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: var(--max-width-1200); /* Limit container width */
+  scrollbar-width: thin; /* Optional: customize scrollbar */
+  scrollbar-color: #ccc transparent; /* Optional: adjust colors */
+}
+
+.categories__grid::-webkit-scrollbar {
+  height: 8px; /* Horizontal scrollbar height */
+}
+
+.categories__grid::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Scrollbar color */
+  border-radius: 10px; /* Rounded scrollbar */
 }
 
 .categories__card {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  width: 150px; /* Fixed width for each card */
   text-align: center;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categories__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .categories__card img {
-  max-width: 100px;
-  margin: auto;
-  margin-bottom: 1rem;
+  max-width: 80px;
+  margin: 0 auto 0.5rem;
+  border-radius: 10%;
+  object-fit: cover;
 }
 
-.categories__card h4 {
-  font-size: 16px;
-  font-family: var(--header-font);
+.categories__card p {
+  font-size: 0.9rem;
+  font-weight: bold;
   color: var(--text-dark);
+  margin-top: 0.5rem;
 }
 
 .hero__container {
@@ -249,7 +273,11 @@ nav {
 }
 
 .product__grid img {
-  background: linear-gradient(to right, #d75e46, #fffacd); /* Yellow gradient background */
+  background: linear-gradient(
+    to right,
+    #d75e46,
+    #fffacd
+  ); /* Yellow gradient background */
   padding: 10px;
   border: 2px solid #ff2a00; /* Red border */
   border-radius: 50%; /* Proper circle */
@@ -267,7 +295,12 @@ nav {
 .product__grid p {
   font-size: 1rem;
   font-weight: bold;
-  background: linear-gradient(90deg, #8b0909, #ffdf2d, #8b0909); /* Gradient colors */
+  background: linear-gradient(
+    90deg,
+    #8b0909,
+    #ffdf2d,
+    #8b0909
+  ); /* Gradient colors */
   background-size: 300% 100%; /* Stretch the gradient for wave-like motion */
   -webkit-background-clip: text; /* Clip background to text (for WebKit browsers) */
   -webkit-text-fill-color: transparent; /* Make the text color transparent */
@@ -288,7 +321,6 @@ nav {
     background-position: 0% 0; /* Return to the left */
   }
 }
-
 
 .product__card__content {
   text-align: center;
@@ -438,7 +470,11 @@ nav {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: linear-gradient(to right, #c74227, #edbb1c); /* Linear gradient background */
+  background: linear-gradient(
+    to right,
+    #c74227,
+    
+  ); /* Linear gradient background */
   color: white;
   padding: 10px 15px;
   border: 2px solid;
@@ -451,10 +487,13 @@ nav {
 }
 
 .get-it-now-btn:hover {
-  background: linear-gradient(to right, #edbb1c, #c74227); /* Reverse gradient on hover */
+  background: linear-gradient(
+    to right,
+    #edbb1c,
+    #c74227
+  ); /* Reverse gradient on hover */
   transform: scale(1.05); /* Slight zoom-in effect */
 }
-
 
 .brands-banners {
   padding-left: 40px;
@@ -462,7 +501,7 @@ nav {
   padding-right: 40px;
   position: relative; /* Needed for absolute positioning of the overlay */
   background-image: url("./assets/Backgroundimg/Architecture2.png"); /* Your background image */
-  background-size:contain;
+  background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
   min-height: 340px; /* Ensure minimum height */
@@ -472,7 +511,6 @@ nav {
   align-items: center; /* Center content vertically */
   z-index: 1; /* Ensures the content stays on top */
 }
-
 
 /* Creating the overlay */
 .brands-banners::before {
@@ -1422,7 +1460,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .privacypolicy {
-  margin: 0px 208px;
+  margin: 0px 10px;
   padding: 40px 16px;
 }
 
@@ -1431,7 +1469,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .TermsandConditions {
-  margin: 0px 208px;
+  margin: 0px 10px;
   padding: 40px 16px;
 }
 
@@ -1444,7 +1482,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .faqs {
-  margin: 0px 208px;
+  margin: 0px 10px;
   padding: 40px 16px;
 }
 
@@ -1470,20 +1508,32 @@ input[type="number"]::-webkit-outer-spin-button {
   line-height: 30px;
 }
 
-.marquee {
-  display: flex;
-  animation: scroll 25s linear infinite;
-  white-space: nowrap; /* Prevent text wrapping */
-}
-
-@keyframes scroll {
+@keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-content div {
+  margin-right: 2rem; /* Adjust the spacing between items */
+}
+
+
 
 /* Base styles for the button */
 .subscribe-btn {
@@ -1504,7 +1554,38 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Hover effect */
 .subscribe-btn:hover {
   color: white; /* Text color changes to white */
-  background: linear-gradient(135deg, #ff5722, #ffa726); /* Gradient background */
+  background: linear-gradient(
+    135deg,
+    #ff5722,
+    #ffa726
+  ); /* Gradient background */
+  background-size: 200% 200%; /* Enlarged gradient for animation */
+  animation: gradientToCenter 0.6s ease forwards; /* Gradient animation */
+}
+
+.load-btn {
+  display: inline-block;
+  position: relative;
+  padding: 12px 24px;
+  color: #ff5722; /* Initial text color */
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #ff5722; /* Initial border color */
+  border-radius: 10px; /* Rounded corners */
+  background: transparent; /* Transparent background */
+  overflow: hidden; /* Hide overflow for the hover effect */
+  transition: color 0.4s ease, background 0.4s ease; /* Smooth color transitions */
+}
+
+/* Hover effect */
+.load-btn:hover {
+  color: white; /* Text color changes to white */
+  background: linear-gradient(
+    135deg,
+    #ff5722,
+    #ffa726
+  ); /* Gradient background */
   background-size: 200% 200%; /* Enlarged gradient for animation */
   animation: gradientToCenter 0.6s ease forwards; /* Gradient animation */
 }
@@ -1520,4 +1601,68 @@ input[type="number"]::-webkit-outer-spin-button {
   100% {
     background-position: center center; /* Stop at the center */
   }
+}
+
+
+.content-area{
+  height: auto;
+  margin: 10px 0px;
+}
+.side-bar{
+  margin: 100px 0px;
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: var(--white) var(--white); /* Handle color and track color */
+}
+/* now create two classes that will help for sticky sidebar */
+.sticky-sidebar{
+  position: sticky;
+  width: 100%;
+  /* the below top and topSpace in js must be same */
+  top: 100px;
+}
+.bottom-fixed-sidebar{
+  /* remove 30px from width as 30px margin is given 15 left 15 right */
+  width: calc(100% - 30px);
+  position: absolute;
+  bottom: 0px;
+}
+
+.about-banner {
+  background-image: url('./assets/banners/About-us.jpg'); /* Updated path */
+  background-size: cover; /* Changed from contain to cover for better coverage */
+  background-position: center; /* Added center positioning for better display */
+  background-repeat: no-repeat;
+  margin-top: 105px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.shop-banner {
+  background-image: url('./assets/banners/Shopping.jpg'); /* Updated path */
+  background-size: cover; /* Changed from contain to cover for better coverage */
+  background-position: center; /* Added center positioning for better display */
+  background-repeat: no-repeat;
+  margin-top: 105px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.privacy-banner {
+  background-image: url('./assets/banners/Return-privacy.jpg'); /* Updated path */
+  background-size: cover; /* Changed from contain to cover for better coverage */
+  background-position: center; /* Added center positioning for better display */
+  background-repeat: no-repeat;
+  margin-top: 105px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.terms-banner {
+  background-image: url('./assets/banners/Terms.jpg'); /* Updated path */
+  background-size: cover; /* Changed from contain to cover for better coverage */
+  background-position: center; /* Added center positioning for better display */
+  background-repeat: no-repeat;
+  margin-top: 105px;
+  width: 100%;
+  border-radius: 10px;
 }
